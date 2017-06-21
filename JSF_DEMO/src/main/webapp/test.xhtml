@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/layouts/genericLayout.xhtml">
+	
+		<ui:define name="menuDefinition">
+			<ui:param name="menuItem" value="home"/>
+		</ui:define>
+		
+		<ui:define name="content">
+		
+			<b:container>
+				<b:jumbotron class="text-center">
+		    		<h1>Produtos</h1>
+		    		<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		    		<p><a class="btn btn-primary btn-lg">Learn more</a></p>
+		    
+		    		<p:button value="Criar novo produto" class="menuButtons" icon="fa fa-fw fa-plus">
+		 				<f:param name="productId" value="10" />
+					</p:button>
+					<br></br>
+					<br></br>
+					<p:button value="Editar um produto existente" class="menuButtons" icon="fa fa-fw fa-edit">
+		 				<f:param name="productId" value="10" />
+					</p:button>
+					<br></br>
+					<br></br>
+					<p:button value="Consultar o detalhe de um produto" class="menuButtons" icon="fa fa-fw fa-eye">
+    					<f:param name="productId" value="10" />
+					</p:button>
+					<br></br>
+					<br></br>
+					<p:button value="Remover um produto" class="menuButtons" icon="fa fa-fw fa-remove">
+    					<f:param name="productId" value="10" />
+					</p:button>
+					<br></br>
+					<br></br>
+					<p:button value="Voltar á página inicial" class="menuButtons" icon="fa fa-fw fa-home">
+    					<f:param name="productId" value="10" />
+					</p:button>
+					
+				</b:jumbotron>
+			</b:container>
+			
+			<p:button value="Bookmark" icon="ui-icon-star">
+	    		<f:param name="productId" value="10" />
+			</p:button>
+			
+			<p:button value="Bookmark" icon="ui-icon-star">
+	    		<f:param name="productId" value="10" />
+			</p:button>
+			
+			<b:row>
+    			<b:column col-md="11">
+      				<b:well>
+          				<h3>Well Header</h3>
+          					Well, that's the content of the <code><b:well /></code>.
+      					</b:well>
+    			</b:column>
+			</b:row>
+			<b:container>
+			<b:jumbotron>
+    			<h1>Hello, world!</h1>
+    			<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    			<p><a class="btn btn-primary btn-lg">Learn more</a></p>
+			</b:jumbotron>
+			</b:container>
+			
+			<h3 style="margin-top:0">Buttons</h3>
+<p:commandButton value="Edit" icon="fa fa-fw fa-edit" type="button"/>
+<p:commandButton value="Remove" icon="fa fa-fw fa-remove" type="button"/>
+<p:commandButton value="Download" icon="fa fa-fw fa-download" type="button"/>
+ 
+<h3>Menu</h3>
+<p:menu>
+    <p:submenu label="Document">
+        <p:menuitem value="New" url="#" icon="fa fa-plus" />
+        <p:menuitem value="Refresh" url="#" icon="fa fa-refresh"/>
+    </p:submenu>
+    <p:submenu label="Navigations">
+        <p:menuitem value="Home" url="http://www.primefaces.org" icon="fa fa-home"/>
+        <p:menuitem value="User" url="#" icon="fa fa-user"/>
+    </p:submenu>
+</p:menu>
+
+<h:panelGrid columns="1" cellpadding="5">
+    <p:commandButton value="Basic" type="button" onclick="PF('dlg1').show();" />
+ 
+    <p:commandButton value="Modal" type="button" onclick="PF('dlg2').show();" />
+ 
+    <p:commandButton value="Effects" type="button" onclick="PF('dlg3').show();" /> 
+</h:panelGrid>
+ 
+<p:dialog header="Basic Dialog" widgetVar="dlg1" minHeight="40">
+    <h:outputText value="Resistance to PrimeFaces is futile!" />
+</p:dialog>
+ 
+<p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+    <h:outputText value="This is a Modal Dialog." />
+</p:dialog>   
+ 
+<p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+    <h:outputText value="This dialog has nice effects." />
+</p:dialog>
+
+
+<b:modal id="amodal" title="Modal Example" styleClass="modalPseudoClass">
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    <f:facet name="footer">
+        <b:button value="Close" dismiss="modal" />
+        <b:button value="Ok" look="primary" dismiss="modal" />
+    </f:facet>
+</b:modal>
+<b:row>
+    <b:column span="3">
+        <a id="atrigger" class="btn btn-primary btn-lg" href="#amodal" data-toggle="modal">Trigger (HTML A tag)</a>
+    </b:column>
+    <b:column span="3">
+        <button id="btrigger" class="btn btn-info btn-lg" data-target="#amodal" data-toggle="modal">Trigger (HTML Button)</button>
+    </b:column>
+    <b:column span="3">
+        <b:button value="Trigger (JSF passthrough)" look="warning" p:data-target="#amodal" p:data-toggle="modal" size="lg"/>
+    </b:column>
+    <b:column span="3">
+        <b:button value="Trigger (JavaScript)" look="success" onclick="$('.modalPseudoClass').modal()" size="lg"/>
+    </b:column>
+</b:row>
+
+<h:form>            
+    <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="login">
+        <p:graphicImage name="/demo/images/login.png" />
+    </h:outputLink>
+ 
+    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+ 
+    <p:dialog header="Login" widgetVar="dlg" resizable="false">
+        <h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="username" value="Username:" />
+            <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+ 
+            <h:outputLabel for="password" value="Password:" />
+            <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
+ 
+            <f:facet name="footer">
+                <p:commandButton value="Login" update="growl" actionListener="#{userLoginView.login}"
+                                 oncomplete="handleLoginRequest(xhr, status, args)" />
+            </f:facet>  
+        </h:panelGrid>
+    </p:dialog>
+</h:form>
+ 
+<script type="text/javascript">
+    function handleLoginRequest(xhr, status, args) {
+        if(args.validationFailed || !args.loggedIn) {
+            PF('dlg').jq.effect("shake", {times:5}, 100);
+        }
+        else {
+            PF('dlg').hide();
+            $('#loginLink').fadeOut();
+        }
+    }
+</script>
+			
+		</ui:define>
+</ui:composition>
+
+
