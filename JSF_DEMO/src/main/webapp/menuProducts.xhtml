@@ -14,36 +14,6 @@
 		</ui:define>
 		
 		<ui:define name="content">
-		
-
-
-			<b:modal id="amodal" title="Modal Example" styleClass="modalPseudoClass">
-    			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    			<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    			<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-    			<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    			<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-    			<f:facet name="footer">
-        			<b:button value="Close" dismiss="modal" />
-        			<b:button value="Ok" look="primary" dismiss="modal" />
-    			</f:facet>
-			</b:modal>
-			
-			<b:row>
-    <b:column span="3">
-        <a id="atrigger" class="btn btn-primary btn-lg" href="#amodal" data-toggle="modal">Trigger (HTML A tag)</a>
-    </b:column>
-    <!--  b:column span="3">
-        <button id="btrigger" class="btn btn-info btn-lg" data-target="#amodal" data-toggle="modal">Trigger (HTML Button)</button>
-    </b:column-->
-    <b:column span="3">
-        <b:button value="Trigger (JSF passthrough)" look="warning" b:data-target=".modalPseudoClass" b:data-toggle="modal" size="lg"/>
-    </b:column>
-    <b:column span="3">
-        <b:button value="Trigger (JavaScript)" look="success" onclick="$('.modalPseudoClass').modal()" size="lg"/>
-    </b:column>
-</b:row>
 			
 			<b:container>
 				<b:jumbotron class="text-center">
@@ -51,16 +21,15 @@
 		    		<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 		    		<p><a class="btn btn-primary btn-lg">Learn more</a></p>
 		     		
-		    		<p:commandLink value="Criar novo produto" class="menuButtons btn btn-Success" icon="fa fa-fw fa-plus" onclick="$('#myModal').modal('show');" update=":myForm" immediate="true" >
+		    		<p:commandButton value="Criar novo produto" class="menuButtons" icon="fa fa-fw fa-plus" onclick="$('#myModalNewProducts').modal('show');" update=":myFormNewProducts" immediate="true">
     						<f:param name="productId" value="10" />
-					</p:commandLink>
-					
-					<!--p:commandLink  styleClass="btn btn-primary"--> 
+					</p:commandButton>
+					 
 					<br></br>
 					<br></br>
-					<p:button value="Editar um produto existente" class="menuButtons" icon="fa fa-fw fa-edit">
+					<p:commandButton value="Editar um produto existente" class="menuButtons" icon="fa fa-fw fa-edit" onclick="$('#myModalEditProducts').modal('show');" update=":myFormEditProducts" immediate="true" >
 		 				<f:param name="productId" value="10" />
-					</p:button>
+					</p:commandButton>
 					<br></br>
 					<br></br>
 					<p:button value="Consultar o detalhe de um produto" class="menuButtons" icon="fa fa-fw fa-eye">
@@ -80,41 +49,42 @@
 				</b:jumbotron>
 				
 			</b:container>
+<!-- MYMODAL -->
+		
+			<b:modal id="myModalNewProducts" title="Novo Produto" styleClass="modalPseudoClass">
+				<h:form id="myFormNewProducts">
+    				<div class="modal-body">
+                    	<p>my modal</p>
+                    	<h:form>
+                    		<h:panelGrid columns="2" cellpadding="5">
+        						<p:outputLabel value="Simple:"/>
+        						<p:inputText></p:inputText>
+        					</h:panelGrid>
+                    	</h:form>
+                	</div>
+    			</h:form>
+    			<f:facet name="footer">
+        			<b:button value="Close" dismiss="modal" />
+        			<b:button value="Ok" look="primary" dismiss="modal" />
+    			</f:facet>
+			</b:modal>   
 			
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <h:form id="myForm">
-                <div class="modal-header">
-                    <h4 class="modal-title">Novo Produto</h4>
-                </div>
-                <div class="modal-body">
-                    
-               		<b:form horizontal="true">
-    					<b:inputText placeholder="Username" required="true" label="Username" colMd="10" labelColMd="2">
-        					<f:facet name="prepend">
-            					<b:icon name="user" />
-        					</f:facet>
-    					</b:inputText>
- 
-    					<b:inputText placeholder="Password" label="Password" colMd="10" labelColMd="2">
-        					<f:facet name="prepend">
-            					<b:iconAwesome name="key" />
-        					</f:facet>
-    					</b:inputText>
-					</b:form>
-                    
-                </div>
-                <h:panelGroup layout="block" styleClass="modal-footer">
-                    <p:commandLink value="Close" immediate="true" styleClass="btn btn-default" oncomplete="$('#myModal').modal('hide');" />
-                </h:panelGroup>
-            </h:form>
-        </div>
-    </div>
-</div>
-			
-			
-			
+			<!-- p:commandLink value="Close" immediate="true" styleClass="btn btn-default" oncomplete="$('#myModal').modal('hide');" /--> 
+   
+		   	<b:modal id="myModalEditProducts" title="Editar Produto" styleClass="modalPseudoClass">
+				<h:form id="myFormEditProducts">
+		    		<div class="modal-body">
+		    			<p>my modal</p>
+		    		</div>
+		   		</h:form>
+   				<f:facet name="footer">
+    				<b:button value="Close" dismiss="modal" />
+		    		<b:button value="Ok" look="primary" dismiss="modal" />
+		   		</f:facet>
+			</b:modal> 
+			  
+<!-- MYMODAL -->
+					
 		</ui:define>
 </ui:composition>
 
