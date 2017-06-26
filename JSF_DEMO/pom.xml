@@ -6,11 +6,14 @@
   <packaging>war</packaging>
   <name>GestaoStocks</name>
   
-  <properties>
-<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-<dependencies>
+	
+	<dependencies>
+	
+	 	<!--  -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -18,20 +21,46 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<!-- CDI -->
+		<dependency>
+		   <groupId>javax.enterprise</groupId>
+		   <artifactId>cdi-api</artifactId>
+		   <!-- Use version 2.0 for Weld 3 -->
+		   <version>1.2</version>
+		   <scope>provided</scope>
+		</dependency>
+		
+		<!-- PrimeFaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>6.1</version>
 		</dependency>
 		
+		<!-- BootsFaces -->
 		<dependency>
 			<groupId>net.bootsfaces</groupId>
 	    	<artifactId>bootsfaces</artifactId>
 	    	<version>1.1.1</version>
 	    	<scope>compile</scope>
 	    </dependency>
-</dependencies>
+	    
+	</dependencies>
+	
+	<repositories>
+	
+		<!-- Repository PrimeFaces -->
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+		
+	</repositories>
+
 	<build>
+	
 		<finalName>JSF_DEMO</finalName>
 		
 		<plugins>
