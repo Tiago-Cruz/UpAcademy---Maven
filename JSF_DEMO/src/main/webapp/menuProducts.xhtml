@@ -55,16 +55,20 @@
 				<h:form id="myFormNewProducts">
     				<div class="modal-body">
                     	<h:form>
-                    		<h:panelGrid columns="2" cellpadding="5">
-        						<p:outputLabel value="Nome:"/>
-        						<p:inputText></p:inputText>
-        						<p:outputLabel value="Desconto:"/>
-        						<p:inputText></p:inputText>
-        						<p:outputLabel value="IVA:"/>
-        						<p:inputText></p:inputText>
-        						<p:outputLabel value="PVP:"/>
-        						<p:inputText></p:inputText>
-        					</h:panelGrid>
+                    	
+								<div class="form-group">
+									<label for="email">Email address:</label>
+									<input type="email" class="form-control" id="email"></input>
+								</div>
+								<div class="form-group">
+									<label for="pwd">Password:</label>
+									<input type="password" class="form-control" id="pwd"></input>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox">Remember me</input></label>
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+		
                     	</h:form>
                 	</div>
     			</h:form>

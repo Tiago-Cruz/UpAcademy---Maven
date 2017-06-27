@@ -6,7 +6,7 @@ import io.altar.jseproject.repository.ProductRepository;
 public class Product extends Entity {
 	
 	private ArrayList<Integer> shelfIdLocation;
-	private String name;
+	private String productName;
 	private Integer discount;
 	private Integer iva;
 	private Double pvp;
@@ -17,11 +17,11 @@ public class Product extends Entity {
 	public void setShelfIdLocation(ArrayList<Integer> shelfIdLocation) {
 		this.shelfIdLocation = shelfIdLocation;
 	}
-	public String getName() {
-		return name;
+	public String getProductName() {
+		return productName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 	public Integer getDiscount() {
 		return discount;
@@ -40,5 +40,15 @@ public class Product extends Entity {
 	}
 	public void setPvp(Double pvp) {
 		this.pvp = pvp;
+	}
+	
+	public Product() {
+		
+	}
+	
+	@Override
+	public String toString(){
+		
+		return "Id:" + getId() + " | Nome: " + productName + " | PVP: " + pvp + "€ | IVA: " + iva + "% | Desconto: " + discount + "€";
 	}
 }
